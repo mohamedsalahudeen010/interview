@@ -1,0 +1,106 @@
+npm init
+
+npm install express mongodb mongoose cors dotenv bcrypt jsonwebtoken nodemailer
+npm install --save -dev nodemon
+=>package.json=>"type":"module";
+=>package.json=>scripts=>"start":"nodemon index.js"
+
+import express from "express"
+const app=express();
+app.use(express.json())
+app.use(express.static("filename"))
+
+import dotenv from "dotenv"
+dotenv.config()
+import cors from "cors"
+app.use(cors())
+
+dbConnection()
+let port=process.env.PORT
+app.listen(port,(async(req,res)=>{
+     console.log(`server is hoisted in ${PORT}`)
+    
+}))
+
+app.get("/",async(req,res)=>{
+    res.send(`Web server Is Hoisted In ${PORT} Port Number`)
+})
+
+
+//DB Connection
+
+import mongoose from "mongoose"
+
+const dbConnection=()=>{
+    try{
+        const params={
+            useNewUrlParser:true,
+            useUnifiedTopology:true
+        }
+
+        mongoose.connect(process.env.MONGODB_URL,params);
+        console.log("DB Connected Successfully")
+    }
+    catch(error){
+        console.log(error)
+    }
+}
+export default dbConnection
+
+//withOut mongoose
+
+import { MongoClient, ObjectId } from "mongodb";
+
+const dbConnection=async()=>{
+    const connection=await new MongoClient(process.env.MONGO_URL).connect();
+    return connection;
+}
+const connection=dbConnection()
+
+app.get("/",async(req,res)=>{
+    try {
+        const data=await(await connection).db("dbName").collection("collectionName")
+        .find().toArray()
+        res.send(data)  
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+app.put("update/:id",async(req,res)=>{
+    try{
+        const {id}=req.params;
+        const updatingData=req.body
+        const data=await(await connection).db("dbName").collection("collectionName")
+        .findOneAndUpdate({_id:new ObjectId(id)},{updatingData})
+
+        res.json({message:"Success",data})
+    }
+    catch(error){
+        console.log(error)
+    }
+})
+
+app.post("/",async(req,res)=>{
+    try {
+        const data=await(await connection).db("dbName").collection("collectionName")
+        .save(req.body)
+        res.send("Success")
+    } catch (error) {
+       console.log(error) 
+    }
+})
+
+app.delete("/:id",async(req,res)=>{
+    try {
+        const {id}=req.params;
+        const data=await(await connection).db("dbName").collection("collectionName")
+        .deleteOne({_id:new ObjectId(id)}) 
+        res.send("SuccessFully deleted")
+    } catch (error) {
+        console.log(error)
+    }
+  
+})
+
+
