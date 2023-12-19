@@ -1,0 +1,68 @@
+.container{
+display: flex;
+
+}
+
+.para1{
+    background-color: darkkhaki;
+    
+    padding: 5px;
+    flex: 2;
+    order: 4;
+}
+.para2{
+    background-color: hotpink;
+   
+    padding: 5px;
+    flex: 2;
+    order: 1;
+}
+.para3{
+    background-color: lawngreen;
+   
+    padding: 5px;
+    flex: 4;
+    order: 2;
+}
+
+.para4{
+    background-color: lightsalmon;
+    padding: 5px;
+    flex: 4;
+    order: 3; 
+}
+
+.main-box{
+    min-height: 400px;
+    background-color: rgb(9, 250, 65);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    /* based on the direction justify-content and align-items work */
+    /* Justify-content : is to align in axis of the direction */
+    /* Align-items : is to align in cross-axis of the direction */
+    /* at flex-direction: row; Justify-content : X - Axis ; Align-items : Y -Axis */
+    /* at flex-direction: column; Justify-content : Y - Axis ; Align-items : X -Axis */
+     justify-content: center;
+     align-items: center;
+
+}
+.box1{
+   /* align-self: flex-start; */
+   /* flex-grow: 2;
+   flex-shrink: 1;
+   flex-basis: 0; */
+   flex: 2 1 0px;
+}
+.box2{
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(118, 16, 219);
+    border: 1px solid white;
+    flex-grow: 2;
+}

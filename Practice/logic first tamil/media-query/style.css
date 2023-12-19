@@ -1,0 +1,44 @@
+.para1{
+    background-color: blueviolet;
+    padding: 5px;
+
+}
+.para2{
+    background-color: darkcyan;
+    padding: 5px;
+}
+
+.para3{
+    background-color: deeppink;
+    padding: 5px;
+}
+
+@media(min-width:801px){
+   .container p{
+        width: 30%;
+        float: left;
+        margin: 2px;
+        padding: 5px;
+    }
+
+}
+/* denotes device screen */
+@media only screen and(min-width:801px) {
+    
+}
+/* denotes properties while printing */
+@media print and (min-width:801px) {
+    .container p{
+        background-color: none;
+    }
+    
+}
+
+@media speech and (min-width:801px){
+    
+}
+
+/* to denote all (default) */
+@media all and (min-width:801px){
+
+}

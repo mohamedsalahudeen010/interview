@@ -1,0 +1,20 @@
+.box1{
+    width: 50%;
+    height: 500px;
+    background-color: darkseagreen;
+    border-radius: 10px;
+    margin-top: 50px;
+    position: relative;
+    float: left;
+    margin: 20px;
+   
+}
+.box2{
+    width: 40%;
+    height: 200px;
+    background-color: blueviolet;
+    border-radius: 10px;
+    top: 30%;
+    left: 100px;
+    position: absolute;
+}

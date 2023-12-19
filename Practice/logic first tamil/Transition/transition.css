@@ -1,0 +1,71 @@
+.circle{
+    margin: 20px;
+    width: 300px;
+    height: 300px;
+    background-color: aquamarine;
+    transition-duration: 3s;
+
+/* transition smoothness aor speed of transition */
+
+                /* slow - fast */
+        /* transition-timing-function: ease-in; */
+
+                /* fast - slow */
+        /* transition-timing-function: ease-out; */
+
+                /* slow - fast - slow */
+        /* transition-timing-function: ease-in-out; */
+
+                /* uniform speed */
+        transition-timing-function: linear;
+           /* we can also customize the speed in developer tool */
+
+/* to delay the transition */
+        transition-delay: 1s;
+
+/* also give above properties in one line */
+        /*transition:propertyToTransit|Timing|DelayTime|speed of Transition   */
+        transition:ease-in;
+    }
+
+.circle:hover{
+    background-color: rgb(251, 152, 225);
+    border-radius: 50%;
+    transform:scale(2);
+   
+}
+
+.square{
+    margin: 20px;
+    width: 300px;
+    height: 300px;
+    background-color: rgb(229, 255, 127);
+
+    /* transition timing (smoothness) */
+    transition-duration: 4s;
+
+    /* which property should be execute */
+    transition-property: background-color,width,transform;
+}
+.square:hover{
+    width: 600px;
+    height: 400px;
+    background-color: seagreen;
+    border-radius: 20px;
+/* to rotate */
+    /* transform: rotatex(90deg);
+    transform: rotatey(90deg); */
+    /* transform: rotate(90deg); */
+
+/* to scale */
+    /* transform: scale(2);
+    transform: scaleX(2); */
+    transform: scaleY(2);
+
+/* to do like margin */
+    transform: translate(50px);
+    /* transform: translateX(20px);*/
+    /* transform: translateY(50px);  */
+
+    
+}
