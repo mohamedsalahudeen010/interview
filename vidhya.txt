@@ -1,0 +1,59 @@
+Guess the output:  var x = 23; (function(){ var x = 43; (function random(){ x++; console.log(x); var x = 21; })(); })();
+Vidhya S12:23
+How to clone an object in Javascript?
+https://docs.google.com/document/d/1-CxSsv-XzYExNHwYBU7FlKklw6_FEMCUPV7XqoaXRos/edit
+"Give the output of the snippet
+function foo() {
+  let a = b = 0;
+  a++;
+  return a;
+}
+foo();
+console.log(typeof a); // => ???
+console.log(typeof b); // => ???  "
+
+Vidhya S12:25
+Write a JS Code to merge this list and avoiding the duplicates using built in functions 
+let  A1= [1, 2, 3, 4, 1, 2, 3, 4 ]  
+let A2= [5, 6, 7, 8] 
+Output : [1, 2, 3, 4, 5, 6, 7, 8]
+
+Vidhya S12:35
+"Write a Javascript Function to find the Number  of Occurrence of Each element in the Array, can use any one of the Method Map, Filter, Object Method, For, Foreach 
+
+Input = [3,4,3,5,3,6] 
+
+Expected Output : [3:3,4:1,5:1,6:1] 
+
+Output may be a  [Key : Val ]- List      or       {Key : Val }- Object 
+
+"
+vidhya@guvi.in
+Vidhya S12:37
+hello world
+dlrow olleh
+Vidhya S12:40
+https://jsonplaceholder.typicode.com/users
+Vidhya S12:48
+10
+
+
+let  A1= [1, 2, 3, 4, 1, 2, 3, 4 ]  
+let A2= [5, 6, 7, 8] 
+
+let given=A1.concat(A2);
+// var res=[...new Set(out)];
+// console.log(res)
+
+let out=[];
+
+for(let i=0;i<given.length;i++){
+  if(!out.includes(given[i])){
+    out.push(given[i])
+  }
+}
+  console.log(out)
+  
+  const res=given.filter((ele,index)=>(given.indexOf(ele)===index))
+   console.log(res)
+// Out : [1, 2, 3, 4, 5, 6, 7, 8]
