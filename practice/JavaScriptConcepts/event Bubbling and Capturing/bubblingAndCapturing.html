@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        border:5px solid black;
+        min-width: 20px;
+        min-height: 20px;
+        max-width: 50vw;
+        padding: 40px;
+    }
+
+</style>
+<body>
+    <h1>Event Bubbling</h1>
+    <div id="bgrandParent">
+        Bubbling grandParent
+        <div id="bparent">
+            Bubbling parent
+            <div id="bchild">
+                Bubbling Child
+            </div>
+        </div>
+    </div>
+    <h1>Event Capturing</h1>
+    <div id="cgrandParent">
+        Capturing grandParent
+        <div id="cparent">
+            Capturing parent
+            <div id="cchild">Capturing child</div>
+        </div>
+    </div>
+
+    <h1>Combine</h1>
+    <div id="combinegrandParent">
+        combine grandParent
+        <div id="combineparent">
+            combine parent
+            <div id="combinechild">combine child</div>
+        </div>
+    </div>
+    <script src="./bubblingAndCapturing.js"></script>
+</body>
+</html>
